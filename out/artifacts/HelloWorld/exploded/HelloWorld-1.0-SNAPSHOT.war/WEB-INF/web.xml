@@ -3,6 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!--
+     配置org.springframework.web.filter.HiddenHttpMethodFilter: 可以把POST请求转化为PUT DELETE请求
+   -->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern><!--过滤所有请求-->
+    </filter-mapping>
+    
+    
+    
     <!--配置DispatcherServlet，web应用被加载时创建-->
     <servlet>
         <servlet-name>springDispatcherServlet</servlet-name>
@@ -22,4 +37,8 @@
         <servlet-name>springDispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern><!--可以应答所有请求-->
     </servlet-mapping>
+
+
+   
+    
 </web-app>
