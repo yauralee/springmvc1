@@ -12,5 +12,7 @@
   </head>
   <body>
     <a href="helloworld">hello world</a>
+    <br>
+    <a href="springmvc/testRequestMapping">Test Request Mapping</a>
   </body>
 </html>

@@ -12,12 +12,10 @@
            也可以不通过contextConfigLocation来配置springMVC的配置文件，
            而是使用默认的：/WEB-INF/［servlert-name］-servlet.xml
         -->
-        <!--
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/springmvc.xml</param-value>
         </init-param>
-        -->
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

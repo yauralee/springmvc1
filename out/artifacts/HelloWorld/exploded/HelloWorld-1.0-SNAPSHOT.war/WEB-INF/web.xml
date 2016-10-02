@@ -8,6 +8,10 @@
         <servlet-name>springDispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!--配置DispatcherServlet的参数：springMVC配置文件的位置和名称-->
+        <!--
+           也可以不通过contextConfigLocation来配置springMVC的配置文件，
+           而是使用默认的：/WEB-INF/［servlert-name］-servlet.xml
+        -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/springmvc.xml</param-value>
