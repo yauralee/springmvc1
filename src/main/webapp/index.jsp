@@ -21,5 +21,7 @@
     <form action="springmvc/testMethod" method="POST">
       <input type="submit" value="submit"/>
     </form>
+    <br><br>
+    <a href="springmvc/testParamsAndHeaders?username=liyu&age=10">Test Request Params</a>
   </body>
 </html>

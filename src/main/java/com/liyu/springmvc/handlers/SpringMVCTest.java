@@ -32,4 +32,14 @@ public class SpringMVCTest {
         System.out.println("test Method");
         return SUCCESS;
     }
+
+    /**
+     * 使用params和headers更加精确的映射请求
+     * @return
+     */
+    @RequestMapping(value="/testParamsAndHeaders", params={"username", "age!=10"}, headers={"Cache-Control:max-age=1"})
+    public String testParamsAndHeaders(){
+        System.out.println("test Params And Headers");
+        return SUCCESS;
+    }
 }
