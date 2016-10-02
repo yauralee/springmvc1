@@ -57,5 +57,8 @@
     <a href="springmvc/testRequestHeader">test Request Header</a>
     <br><br>
 
+    <a href="springmvc/testCookieValue">test Cookie Value</a>
+    <br><br>
+
   </body>
 </html>

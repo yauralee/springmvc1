@@ -132,4 +132,18 @@ public class SpringMVCTest {
         return SUCCESS;
     }
 
+
+    /**
+     * @CookieValue;
+     * 映射一个cookie值
+     * 属性和@RequestParam相同
+     * @param sessionID
+     * @return
+     */
+    @RequestMapping("/testCookieValue")
+    public String testCookieValue(@CookieValue("_myhome_session") String sessionID){
+        System.out.println("testCookieValue, sessionID: " + sessionID);
+        return SUCCESS;
+    }
+
 }
