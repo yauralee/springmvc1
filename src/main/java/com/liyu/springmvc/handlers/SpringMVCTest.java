@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 /**
@@ -103,6 +104,22 @@ public class SpringMVCTest {
     @RequestMapping(value="/testRest/{id}", method=RequestMethod.DELETE)
     public String testRestDelete(@PathVariable Integer id){
         System.out.println("TestRest Delete " + id);
+        return SUCCESS;
+    }
+
+    /**
+     * @RequestParam映射请求参数
+     * value值为请求参数的参数名
+     * required：请求参数是否必须
+     * defaltValue: 默认值
+     * @param username
+     * @param age
+     * @return
+     */
+    @RequestMapping("/testRequestParam")
+    public String testRequestParam(@RequestParam(value="username") String username,
+                                   @RequestParam(value="age", required = false, defaultValue = "0") int age){
+        System.out.println("test request param, username = " + username + ", age = " + age);
         return SUCCESS;
     }
 

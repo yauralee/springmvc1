@@ -43,5 +43,9 @@
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="TestRest Delete">
     </form>
+
+
+    <br><br>
+    <a href="springmvc/testRequestParam?username=liyu&age=18">test Request Param</a>
   </body>
 </html>
