@@ -23,5 +23,7 @@
     </form>
     <br><br>
     <a href="springmvc/testParamsAndHeaders?username=liyu&age=10">Test Request Params</a>
+    <br><br>
+    <a href="springmvc/testAntPath/anychar/abc">Test Request Params</a>
   </body>
 </html>

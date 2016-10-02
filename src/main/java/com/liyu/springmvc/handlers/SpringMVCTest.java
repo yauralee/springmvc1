@@ -42,4 +42,10 @@ public class SpringMVCTest {
         System.out.println("test Params And Headers");
         return SUCCESS;
     }
+
+    @RequestMapping("/testAntPath/*/abc")
+    public String testAntPath(){
+        System.out.println("test Ant Path");
+        return SUCCESS;
+    }
 }
