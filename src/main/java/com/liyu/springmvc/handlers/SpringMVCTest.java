@@ -1,10 +1,7 @@
 package com.liyu.springmvc.handlers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 /**
@@ -120,6 +117,18 @@ public class SpringMVCTest {
     public String testRequestParam(@RequestParam(value="username") String username,
                                    @RequestParam(value="age", required = false, defaultValue = "0") int age){
         System.out.println("test request param, username = " + username + ", age = " + age);
+        return SUCCESS;
+    }
+
+    /**
+     * 用法同@RequestParam
+     * 作用：映射请求头信息
+     * @param language
+     * @return
+     */
+    @RequestMapping("/testRequestHeader")
+    public String testRequestHeader(@RequestHeader(value="Accept-Language") String language){
+        System.out.println("test Request Header, Accept-Language: " + language);
         return SUCCESS;
     }
 

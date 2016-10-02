@@ -13,8 +13,10 @@
   <body>
     <a href="helloworld">hello world</a>
     <br><br>
+
     <a href="springmvc/testRequestMapping">Test Request Mapping</a>
     <br><br>
+
     <!--
     <a href="springmvc/testMethod">Test Request Method</a>
     -->
@@ -22,12 +24,16 @@
       <input type="submit" value="submit"/>
     </form>
     <br><br>
+
     <a href="springmvc/testParamsAndHeaders?username=liyu&age=10">Test Request Params</a>
     <br><br>
+
     <a href="springmvc/testAntPath/anychar/abc">Test Ant Path</a>
     <br><br>
+
     <a href="springmvc/testPathVariable/1">Test Path Variable</a>
     <br><br>
+
     <a href="springmvc/testRest/1">Test Rest Get</a>
     <br><br>
     <form action="springmvc/testRest" method="post">
@@ -43,9 +49,13 @@
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="TestRest Delete">
     </form>
-
-
     <br><br>
+
     <a href="springmvc/testRequestParam?username=liyu&age=18">test Request Param</a>
+    <br><br>
+
+    <a href="springmvc/testRequestHeader">test Request Header</a>
+    <br><br>
+
   </body>
 </html>
