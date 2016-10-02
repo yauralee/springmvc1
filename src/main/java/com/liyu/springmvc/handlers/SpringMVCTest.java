@@ -1,6 +1,7 @@
 package com.liyu.springmvc.handlers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -46,6 +47,18 @@ public class SpringMVCTest {
     @RequestMapping("/testAntPath/*/abc")
     public String testAntPath(){
         System.out.println("test Ant Path");
+        return SUCCESS;
+    }
+
+
+    /**
+     * @PathVariable 可以映射URL中的占位符到目标方法的参数中
+     * @param id
+     * @return
+     */
+    @RequestMapping("/testPathVariable/{id}")
+    public String testPathVariable(@PathVariable("id") Integer id){
+        System.out.println("test Path Variable " + id);
         return SUCCESS;
     }
 }

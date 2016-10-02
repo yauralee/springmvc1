@@ -24,6 +24,8 @@
     <br><br>
     <a href="springmvc/testParamsAndHeaders?username=liyu&age=10">Test Request Params</a>
     <br><br>
-    <a href="springmvc/testAntPath/anychar/abc">Test Request Params</a>
+    <a href="springmvc/testAntPath/anychar/abc">Test Ant Path</a>
+    <br><br>
+    <a href="springmvc/testPathVariable/1">Test Path Variable</a>
   </body>
 </html>
