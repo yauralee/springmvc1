@@ -2,6 +2,7 @@ package com.liyu.springmvc.handlers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by twcn on 10/2/16.
@@ -19,6 +20,16 @@ public class SpringMVCTest {
     @RequestMapping("/testRequestMapping")
     public String testRequestMapping(){
         System.out.println("RequestMapping can embellish class, not only method");
+        return SUCCESS;
+    }
+
+    /**
+     * 使用method属性来指定http请求方式
+     * @return
+     */
+    @RequestMapping(value = "/testMethod", method = RequestMethod.POST)
+    public String testMethod(){
+        System.out.println("test Method");
         return SUCCESS;
     }
 }

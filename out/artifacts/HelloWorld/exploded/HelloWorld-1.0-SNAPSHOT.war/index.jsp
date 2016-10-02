@@ -12,7 +12,14 @@
   </head>
   <body>
     <a href="helloworld">hello world</a>
-    <br>
+    <br><br>
     <a href="springmvc/testRequestMapping">Test Request Mapping</a>
+    <br><br>
+    <!--
+    <a href="springmvc/testMethod">Test Request Method</a>
+    -->
+    <form action="springmvc/testMethod" method="POST">
+      <input type="submit" value="submit"/>
+    </form>
   </body>
 </html>
