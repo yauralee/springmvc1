@@ -5,6 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.Writer;
+
 /**
  * Created by twcn on 10/2/16.
  */
@@ -159,6 +164,29 @@ public class SpringMVCTest {
     public String testPojo(User user){
         System.out.println("testPojo " + user);
         return SUCCESS;
+    }
+
+
+    /**
+     * 可以使用servlet原生api作为目标方法的参数，具体支持类型：
+     * HttpServletRequest
+     * HttpServletResponse
+     * HttpSession
+     * java.security.Principal
+     * Locale
+     * InputStream
+     * OutputStream
+     * Reader
+     * Writer
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping("/testServletAPI")
+    public void testServletAPI(HttpServletRequest request, HttpServletResponse response, Writer out) throws IOException {
+        System.out.println("testServletAPI, request= " + request + ", response= "+ response);
+        out.write("hello springMVC");
+//        return SUCCESS;
     }
 
 }
