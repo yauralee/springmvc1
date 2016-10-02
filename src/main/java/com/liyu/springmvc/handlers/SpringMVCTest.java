@@ -1,5 +1,6 @@
 package com.liyu.springmvc.handlers;
 
+import com.liyu.springmvc.entities.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
@@ -143,6 +144,20 @@ public class SpringMVCTest {
     @RequestMapping("/testCookieValue")
     public String testCookieValue(@CookieValue("_myhome_session") String sessionID){
         System.out.println("testCookieValue, sessionID: " + sessionID);
+        return SUCCESS;
+    }
+
+
+    /**
+     * springMVC会按请求参数名和pojo属性名进行自动匹配
+     * 自动为该对象填充属性
+     * 支持级联属性，如address.city
+     * @param user
+     * @return
+     */
+    @RequestMapping("/testPojo")
+    public String testPojo(User user){
+        System.out.println("testPojo " + user);
         return SUCCESS;
     }
 
