@@ -106,6 +106,15 @@
       <input type="submit" value="submit">
     </form>
 
+    <a href="springmvc/testViewAndViewResolver">test ViewAndViewResolver</a>
+    <br><br>
+
+    <a href="springmvc/testView">test View</a>
+    <br><br>
+
+    <a href="springmvc/testRedirect">test Redirect</a>
+    <br><br>
+
 
   </body>
 </html>

@@ -310,5 +310,30 @@ public class SpringMVCTest {
         return SUCCESS;
     }
 
+    @RequestMapping("/testViewAndViewResolver")
+    public String testViewAndViewResolver(){
+        System.out.println("testViewAndViewResolver");
+        return SUCCESS;
+    }
+
+    /**
+     * 测试自定义视图HelloView
+     * @return
+     */
+    @RequestMapping("/testView")
+    public String testView(){
+        System.out.println("testView");
+        return "helloView";
+    }
+
+    /**
+     * 
+     * @return
+     */
+    @RequestMapping("/testRedirect")
+    public String testRedirect(){
+        System.out.println("testRedirect");
+        return "redirect:/index.jsp";
+    }
 
 }
