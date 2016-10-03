@@ -10,6 +10,8 @@
 <head>
     <h4>success page</h4>
     time: ${requestScope.time}
+    <br><br>
+    names: ${requestScope.names}
 </head>
 <body>
 

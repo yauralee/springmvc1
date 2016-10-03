@@ -83,6 +83,9 @@
     <a href="springmvc/testModelAndView">test ModelAndView</a>
     <br><br>
 
+    <a href="springmvc/testMap">test Map</a>
+    <br><br>
+
 
   </body>
 </html>

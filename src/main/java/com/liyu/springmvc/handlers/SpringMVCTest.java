@@ -2,6 +2,7 @@ package com.liyu.springmvc.handlers;
 
 import com.liyu.springmvc.entities.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.support.BindingAwareModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by twcn on 10/2/16.
@@ -204,6 +208,18 @@ public class SpringMVCTest {
         //添加模型数据到ModelAndView, 将map放到请求域里
         modelAndView.addObject("time", new Date());
         return modelAndView;
+    }
+
+    /**
+     * 目标方法可以添加Map类型(也可以是Model或ModleMao类型)的参数
+     * @param map
+     * @return
+     */
+    @RequestMapping("/testMap")
+    public String testMap(Map<String, Object> map){
+        System.out.println(map.getClass().getName()); //BindingAwareModelMap
+        map.put("names", Arrays.asList("tom","cat","rose"));
+        return SUCCESS;
     }
 
 
