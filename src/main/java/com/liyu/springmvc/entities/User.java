@@ -4,17 +4,30 @@ package com.liyu.springmvc.entities;
  * Created by twcn on 10/2/16.
  */
 public class User {
-
+    private Integer id;
     private String username;
     private String password;
     private String email;
     private int age;
     private Address address;
 
+//    @Override
+//    public String toString() {
+//        return "User [ username=" + username + " , password=" + password +
+//                " , email=" + email + " , age=" + age + " ,address=" + address + "]";
+//    }
     @Override
     public String toString() {
-        return "User [ username=" + username + " , password=" + password +
-                " , email=" + email + " , age=" + age + " ,address=" + address + "]";
+        return "User [ id = " + id + " , username=" + username + " , password=" + password +
+                " , email=" + email + " , age=" + age + "]";
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setAddress(Address address) {
@@ -57,7 +70,8 @@ public class User {
         return username;
     }
 
-    public User(String username, String password, String email, int age){
+    public User(Integer id, String username, String password, String email, int age){
+        this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
