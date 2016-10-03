@@ -14,7 +14,7 @@ public class User {
     @Override
     public String toString() {
         return "User [ username=" + username + " , password=" + password +
-                " , email=" + email + " , age=" + age + " ,address=" + address;
+                " , email=" + email + " , age=" + age + " ,address=" + address + "]";
     }
 
     public void setAddress(Address address) {
@@ -55,6 +55,17 @@ public class User {
 
     public String getUsername() {
         return username;
+    }
+
+    public User(String username, String password, String email, int age){
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.age = age;
+    }
+
+    public User(){
+
     }
 
 }

@@ -86,6 +86,9 @@
     <a href="springmvc/testMap">test Map</a>
     <br><br>
 
+    <a href="springmvc/testSessionAttributes">test SessionAttributes</a>
+    <br><br>
+
 
   </body>
 </html>

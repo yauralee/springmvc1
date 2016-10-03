@@ -2,16 +2,13 @@ package com.liyu.springmvc.handlers;
 
 import com.liyu.springmvc.entities.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.support.BindingAwareModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
@@ -19,6 +16,7 @@ import java.util.Map;
 /**
  * Created by twcn on 10/2/16.
  */
+@SessionAttributes(value={"user"}, types={String.class})
 @RequestMapping("/springmvc")
 @Controller
 public class SpringMVCTest {
@@ -219,6 +217,24 @@ public class SpringMVCTest {
     public String testMap(Map<String, Object> map){
         System.out.println(map.getClass().getName()); //BindingAwareModelMap
         map.put("names", Arrays.asList("tom","cat","rose"));
+        return SUCCESS;
+    }
+
+    /**
+     * SessionAttributes除了可以通过属性名指定需要放在session中的属性外（使用value属性值），
+     * 也可以通过模型属性的对象类型指定那些模型属性需要放在session中（使用type属性值）
+     * @SessionAttributes(value={"user"}, types={String.class}) 这个注解只能修饰类！！！
+     * value表示直接将user这个属性放在session中
+     * type表示也可以把String类型的属性放在session中
+     * 例如：@SessionAttributes(types=User.class)
+     * @param map
+     * @return
+     */
+    @RequestMapping("/testSessionAttributes")
+    public String testSessionAttributes(Map<String, Object> map){
+        User user = new User("ly", "123", "111@qqwwq", 12);
+        map.put("user", user);
+        map.put("school", "tw");
         return SUCCESS;
     }
 
