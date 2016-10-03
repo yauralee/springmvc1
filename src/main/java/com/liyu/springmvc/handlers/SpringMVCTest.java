@@ -4,11 +4,13 @@ import com.liyu.springmvc.entities.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Date;
 
 /**
  * Created by twcn on 10/2/16.
@@ -188,5 +190,21 @@ public class SpringMVCTest {
         out.write("hello springMVC");
 //        return SUCCESS;
     }
+
+    /**
+     * 目标方法的返回值可以是ModelAndView类型
+     * 其中可以包含视图和模型信息
+     * SpringMvc会把ModelAndView中的数据放入到request的请求域里
+     * @return
+     */
+    @RequestMapping("/testModelAndView")
+    public ModelAndView testModelAndView(){
+        String viewName = SUCCESS;
+        ModelAndView modelAndView= new ModelAndView(viewName);
+        //添加模型数据到ModelAndView, 将map放到请求域里
+        modelAndView.addObject("time", new Date());
+        return modelAndView;
+    }
+
 
 }
